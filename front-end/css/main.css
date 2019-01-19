@@ -1,0 +1,141 @@
+:root {
+    --light-square-color: antiquewhite;
+    --dark-square-color: brown;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    
+    height: 100vh;
+    width: 100%;
+    background-color: dimgrey;
+    
+    display: flex;
+    align-content: center;
+}
+
+.chessboard-container {
+    height: 100vh;
+    width: 80%;
+    
+    display: flex;
+    align-items: center;
+}
+
+.chess-board-row {
+    height: 12.5%;
+    width: 100%;
+}
+
+.chess-board-tile {
+    height: 100%;
+    width: 12.5%;
+    float: left;
+}
+
+.chess-board-row:nth-child(2n) .chess-board-tile:nth-child(2n),
+.chess-board-row:nth-child(2n-1) .chess-board-tile:nth-child(2n-1){
+    background-color: var(--light-square-color);
+}
+
+.chess-board-row:nth-child(2n-1) .chess-board-tile:nth-child(2n),
+.chess-board-row:nth-child(2n) .chess-board-tile:nth-child(2n-1){
+    background-color: var(--dark-square-color);
+}
+
+.chessboard {
+    height: 750px;
+    width: 750px;
+    margin: auto;
+    position: relative;
+}
+
+.chess-piece {
+    height: 12.5%;
+    width: 12.5%;
+    position: absolute;
+    
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.chess-piece:hover {
+    cursor: pointer;
+}
+
+.white-rook {
+    background-image: url(../img/pieces/wr.svg);
+}
+
+.white-knight {
+    background-image: url(../img/pieces/wn.svg);
+}
+
+.white-bishop {
+    background-image: url(../img/pieces/wb.svg);
+}
+
+.white-queen {
+    background-image: url(../img/pieces/wq.svg);
+}
+
+.white-king {
+    background-image: url(../img/pieces/wk.svg);
+}
+
+.black-pawn {
+    background-image: url(../img/pieces/bp.svg);
+}
+
+.black-rook {
+    background-image: url(../img/pieces/br.svg);
+}
+
+.black-knight {
+    background-image: url(../img/pieces/bn.svg);
+}
+
+.black-bishop {
+    background-image: url(../img/pieces/bb.svg);
+}
+
+.black-queen {
+    background-image: url(../img/pieces/bq.svg);
+}
+
+.black-king {
+    background-image: url(../img/pieces/bk.svg);
+}
+
+.dragging {
+    opacity: 0.25;
+}
+
+#drag-piece {
+    z-index: 99999;
+    display: none;
+}
+
+.notation {
+    height: 100%;
+    width: 20%;
+    background-color: aliceblue;
+    
+    padding-left: 24px;
+    padding-right: 36px;
+}
+
+.notation-title {
+    font-family: Verdana;
+    font-weight: bold;
+    padding-top: 12px;
+}
+
+.notation-moves {
+    font-family: Verdana;
+    font-size: 12px;
+}
